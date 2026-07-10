@@ -78,6 +78,11 @@ variable "apply_immediately" {
   default     = null
 }
 
+variable "auto_minor_version_upgrade" {
+  description = "Whether to apply minor engine upgrades automatically to the DB cluster during the maintenance window. Defaults to `true`"
+  type        = bool
+  default     = null
+}
 variable "availability_zones" {
   description = "List of EC2 Availability Zones for the DB cluster storage where DB cluster instances can be created. RDS automatically assigns 3 AZs if less than 3 AZs are configured, which will show as a difference requiring resource recreation next Terraform apply"
   type        = list(string)

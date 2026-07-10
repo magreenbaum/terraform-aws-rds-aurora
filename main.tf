@@ -48,6 +48,7 @@ resource "aws_rds_cluster" "this" {
   allocated_storage           = var.allocated_storage
   allow_major_version_upgrade = var.allow_major_version_upgrade
   apply_immediately           = var.apply_immediately
+  auto_minor_version_upgrade  = var.auto_minor_version_upgrade
   availability_zones          = var.availability_zones
   backup_retention_period     = var.backup_retention_period
   backtrack_window            = local.backtrack_window
@@ -188,7 +189,7 @@ resource "aws_rds_cluster_instance" "this" {
   region = var.region
 
   apply_immediately                     = try(coalesce(each.value.apply_immediately, var.apply_immediately), null)
-  auto_minor_version_upgrade            = each.value.auto_minor_version_upgrade
+  auto_minor_version_upgrade            = try(coalesce(each.value.auto_minor_version_upgrade, var.auto_minor_version_upgrade), null)
   availability_zone                     = each.value.availability_zone
   ca_cert_identifier                    = try(coalesce(each.value.ca_cert_identifier, var.cluster_ca_cert_identifier), null)
   cluster_identifier                    = aws_rds_cluster.this[0].id

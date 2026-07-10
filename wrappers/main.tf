@@ -6,6 +6,7 @@ module "wrapper" {
   allocated_storage                                      = try(each.value.allocated_storage, var.defaults.allocated_storage, null)
   allow_major_version_upgrade                            = try(each.value.allow_major_version_upgrade, var.defaults.allow_major_version_upgrade, false)
   apply_immediately                                      = try(each.value.apply_immediately, var.defaults.apply_immediately, null)
+  auto_minor_version_upgrade                             = try(each.value.auto_minor_version_upgrade, var.defaults.auto_minor_version_upgrade, null)
   autoscaling_enabled                                    = try(each.value.autoscaling_enabled, var.defaults.autoscaling_enabled, false)
   autoscaling_max_capacity                               = try(each.value.autoscaling_max_capacity, var.defaults.autoscaling_max_capacity, 2)
   autoscaling_min_capacity                               = try(each.value.autoscaling_min_capacity, var.defaults.autoscaling_min_capacity, 0)
