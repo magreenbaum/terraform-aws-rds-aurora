@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [10.3.1](https://github.com/terraform-aws-modules/terraform-aws-rds-aurora/compare/v10.3.0...v10.3.1) (2026-08-06)
+
+### Bug Fixes
+
+* Update GitHub Actions and pre-commit hook versions ([#551](https://github.com/terraform-aws-modules/terraform-aws-rds-aurora/issues/551)) ([9026a0c](https://github.com/terraform-aws-modules/terraform-aws-rds-aurora/commit/9026a0c3e033e501920673874f1394e72090b9d8))
+
 ## [10.3.0](https://github.com/terraform-aws-modules/terraform-aws-rds-aurora/compare/v10.2.0...v10.3.0) (2026-07-10)
 
 ### Features
